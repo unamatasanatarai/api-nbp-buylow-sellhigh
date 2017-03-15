@@ -26,10 +26,12 @@ class DateRangeTest extends TestCase
         $this->assertEquals(43, $dr->getFrom());
     }
 
-    public function testShouldSetFromZero()
+    public function testShouldSetZerosIfPassedNull()
     {
-        $dr = new \DateRange(43);
+        $dr = new \DateRange(43, 89);
         $dr->setFrom(null);
+        $dr->setTo(null);
         $this->assertEquals(0, $dr->getFrom());
+        $this->assertEquals(0, $dr->getTo());
     }
 }
