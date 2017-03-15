@@ -26,6 +26,13 @@
         "phpunit/phpunit": "^6.0"
     },
     "require": {
+        "unamatasanatarai/php-preconditions": "dev-master",
         "guzzlehttp/guzzle": "^6.2"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/unamatasanatarai/php-preconditions.git"
+        }
+    ]
 }

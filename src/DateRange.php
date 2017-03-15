@@ -10,24 +10,36 @@ class DateRange
 
     public function __construct($start = null, $stop = null)
     {
-        $this->start = $start;
-        $this->stop = $stop;
+        $this->setFrom($start);
+        $this->setTo($stop);
         if ( $stop = null ) {
             $this->setTo(time());
         }
     }
 
 
-    public function setFrom($timestamp)
+    public function setFrom($timestamp = 0)
     {
+        if (is_null($timestamp)){
+            $timestamp = 0;
+        }
+        if ( ! is_int($timestamp) ) {
+            throw new InvalidArgumentException();
+        }
         $this->start = $timestamp;
 
         return $this;
     }
 
 
-    public function setTo($timestamp)
+    public function setTo($timestamp = 0)
     {
+        if (is_null($timestamp)){
+            $timestamp = 0;
+        }
+        if ( ! is_int($timestamp) ) {
+            throw new InvalidArgumentException();
+        }
         $this->stop = $timestamp;
 
         return $this;

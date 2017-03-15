@@ -29,6 +29,11 @@ class GoldCalculator
         return $this->getMax() - $this->getMin();
     }
 
+    public function computeIncomeForPurchase($purchaseCash)
+    {
+        return $this->getMaxMinDiff() * $purchaseCash;
+    }
+
 
     public function getMinArray()
     {
