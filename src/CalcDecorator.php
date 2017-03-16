@@ -22,8 +22,8 @@ class CalcDecorator
         return sprintf(
             $this->template,
             number_format($this->amount),
-            $this->getPurchaseDates(),
-            $this->getSellDates(),
+            $this->calc->getBuyKey(),
+            $this->calc->getSellKey(),
             number_format($this->calc->computeIncomeForPurchase($this->amount))
         );
     }
@@ -35,28 +35,6 @@ class CalcDecorator
     public function setAmount($amount)
     {
         $this->amount = $amount;
-    }
-
-
-    private function getPurchaseDates()
-    {
-        $str = '';
-        foreach ($this->calc->getMinArray() as $date => $price) {
-            $str .= sprintf("%s (%szł)\n", $date, $price);
-        }
-
-        return $str;
-    }
-
-
-    private function getSellDates()
-    {
-        $str = '';
-        foreach ($this->calc->getMaxArray() as $date => $price) {
-            $str .= sprintf("%s (%szł)\n", $date, $price);
-        }
-
-        return $str;
     }
 }
 
