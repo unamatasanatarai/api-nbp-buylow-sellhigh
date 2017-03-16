@@ -71,9 +71,28 @@ class GoldCalculator
         return ($this->sell - $this->buy) * $money;
     }
 
-    public function getBuy(){return $this->buy;}
-    public function getSell(){return $this->sell;}
-    public function getBuyKey(){return $this->buykey;}
-    public function getSellKey(){return $this->sellkey;}
+
+    public function getBuy()
+    {
+        return $this->buy;
+    }
+
+
+    public function getSell()
+    {
+        return $this->sell;
+    }
+
+
+    public function getBuyKey()
+    {
+        return $this->buykey;
+    }
+
+
+    public function getSellKey()
+    {
+        return $this->sellkey;
+    }
 }
 

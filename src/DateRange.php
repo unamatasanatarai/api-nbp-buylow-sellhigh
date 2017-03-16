@@ -20,7 +20,7 @@ class DateRange
 
     public function setFrom($timestamp = 0)
     {
-        if (is_null($timestamp)){
+        if ( is_null($timestamp) ) {
             $timestamp = 0;
         }
         if ( ! is_int($timestamp) ) {
@@ -34,7 +34,7 @@ class DateRange
 
     public function setTo($timestamp = 0)
     {
-        if (is_null($timestamp)){
+        if ( is_null($timestamp) ) {
             $timestamp = 0;
         }
         if ( ! is_int($timestamp) ) {

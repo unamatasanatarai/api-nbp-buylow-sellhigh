@@ -17,24 +17,19 @@ class CalcDecorator
     }
 
 
-    public function toString()
-    {
-        return sprintf(
-            $this->template,
-            number_format($this->amount),
-            $this->calc->getBuyKey(),
-            $this->calc->getSellKey(),
-            number_format($this->calc->computeIncomeForPurchase($this->amount))
-        );
-    }
-
-
     /**
      * @param mixed $amount
      */
     public function setAmount($amount)
     {
         $this->amount = $amount;
+    }
+
+
+    public function toString()
+    {
+        return sprintf($this->template, number_format($this->amount), $this->calc->getBuyKey(),
+            $this->calc->getSellKey(), number_format($this->calc->computeIncomeForPurchase($this->amount)));
     }
 }
 

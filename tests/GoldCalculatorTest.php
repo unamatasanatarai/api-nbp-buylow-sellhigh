@@ -20,6 +20,7 @@ class GoldCalculatorTest extends TestCase
         $this->assertEquals(1, $gc->getBuyKey());
     }
 
+
     public function testFindsCorrectPlaces()
     {
         $arr = [
@@ -35,15 +36,17 @@ class GoldCalculatorTest extends TestCase
         $this->assertEquals(1, $gc->getBuy());
         $this->assertEquals(1, $gc->getBuyKey());
     }
+
+
     public function testFindsCorrectPlacesinComplexArray()
     {
         $arr = [
-            1 => 2,
-            2 => 10,
-            3 => 1,
-            4 => 10,
-            5 => 3,
-            8 => 19,
+            1  => 2,
+            2  => 10,
+            3  => 1,
+            4  => 10,
+            5  => 3,
+            8  => 19,
             18 => 1,
             19 => 7,
         ];
@@ -53,4 +56,5 @@ class GoldCalculatorTest extends TestCase
         $this->assertEquals(1, $gc->getBuy());
         $this->assertEquals(3, $gc->getBuyKey());
     }
+
 }

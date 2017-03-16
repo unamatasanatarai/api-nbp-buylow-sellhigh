@@ -44,18 +44,6 @@ class CurlGateway implements GatewayInterface
 
 
     /**
-     * @param $start int
-     * @param $stop  int
-     *
-     * @return string
-     */
-    private function makeUrl($start, $stop)
-    {
-        return sprintf($this->url, date('Y-m-d', $start), date('Y-m-d', $stop));
-    }
-
-
-    /**
      * @param $start
      * @param $stop
      *
@@ -67,6 +55,18 @@ class CurlGateway implements GatewayInterface
 
         return json_decode($res->getBody()
             ->getContents());
+    }
+
+
+    /**
+     * @param $start int
+     * @param $stop  int
+     *
+     * @return string
+     */
+    private function makeUrl($start, $stop)
+    {
+        return sprintf($this->url, date('Y-m-d', $start), date('Y-m-d', $stop));
     }
 }
 
